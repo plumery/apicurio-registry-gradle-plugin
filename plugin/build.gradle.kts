@@ -5,7 +5,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val VERSION: String by project
 version = VERSION
-group = "net.croz.apicurio"
+group = "com.plumery.apicurio"
 
 plugins {
     groovy
@@ -103,10 +103,10 @@ tasks.withType<DokkaTask>() {
 gradlePlugin {
     plugins {
         create("apicurio-registry-gradle-plugin") {
-            id = "net.croz.apicurio-registry-gradle-plugin"
+            id = "com.plumery.apicurio-registry-gradle-plugin"
             displayName = "Apicurio Schema Registry Gradle plugin"
             description = "A plugin to download, register and test compatibility of schemas from Apicurio Schema Registry"
-            implementationClass = "net.croz.apicurio.SchemaRegistryPlugin"
+            implementationClass = "com.plumery.apicurio.SchemaRegistryPlugin"
         }
     }
 
