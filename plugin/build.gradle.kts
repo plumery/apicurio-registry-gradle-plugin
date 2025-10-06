@@ -101,12 +101,17 @@ tasks.withType<DokkaTask>() {
 }
 
 gradlePlugin {
+    website.set("https://github.com/plumery/apicurio-registry-gradle-plugin")
+    vcsUrl.set("https://github.com/plumery/apicurio-registry-gradle-plugin.git")
+
     plugins {
         create("apicurio-registry-gradle-plugin") {
             id = "com.plumery.apicurio-registry-gradle-plugin"
             displayName = "Apicurio Schema Registry Gradle plugin"
             description = "A plugin to download, register and test compatibility of schemas from Apicurio Schema Registry"
             implementationClass = "com.plumery.apicurio.SchemaRegistryPlugin"
+
+            tags.set(listOf("gradle", "apicurio", "schema", "kafka", "registry"))
         }
     }
 
