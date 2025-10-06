@@ -111,7 +111,7 @@ gradlePlugin {
             description = "A plugin to download, register and test compatibility of schemas from Apicurio Schema Registry"
             implementationClass = "com.plumery.apicurio.SchemaRegistryPlugin"
 
-            tags.set(listOf("gradle", "apicurio", "schema", "kafka", "registry"))
+            tags.set(listOf("schema", "registry", "schema-registry", "apicurio", "kafka"))
         }
     }
 
