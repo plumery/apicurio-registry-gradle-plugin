@@ -12,7 +12,7 @@ To apply this plugin to your project, add the following line to your root `build
 
 ```groovy
 plugins {
-    id 'com.plumery.apicurio-registry-gradle-plugin' version "1.0.0"
+    id 'com.plumery.apicurio-registry-gradle-plugin' version "<<latest_version>>"
 }
 ```
 
@@ -20,7 +20,7 @@ or `build.gradle.kts`:
 
 ```kotlin
 plugins {
-    id("com.plumery.apicurio-registry-gradle-plugin") version "1.0.0"
+    id("com.plumery.apicurio-registry-gradle-plugin") version "<<latest_version>>"
 }
 ```
 
@@ -39,7 +39,7 @@ under the `schemaRegistry` group:
 ## License
 
     Copyright (c) 2023 CROZ Ltd.
-    Copyright (c) 2024 Plumery
+    Copyright (c) 2025 Plumery
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
