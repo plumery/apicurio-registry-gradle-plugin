@@ -1,8 +1,8 @@
 [versions]
-apicurioRegistryClient = "2.3.1.Final"
-dokka = "1.7.20"
-kotlin = "1.7.21"
-kotlinxBinaryCompatibilityValidator = "0.12.1"
+apicurioRegistryClient = "2.6.8.Final"
+dokka = "1.9.20"
+kotlin = "1.9.24"
+kotlinxBinaryCompatibilityValidator = "0.14.0"
 kover = "0.6.1"
 spock = "2.3-groovy-3.0"
 spockTestContainers = "1.17.5"

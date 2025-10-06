@@ -1,6 +1,5 @@
 package net.croz.apicurio.task.register
 
-import io.apicurio.registry.types.ArtifactType as ClientArtifactType
 import net.croz.apicurio.core.specification.AbstractFunctionalSpecification
 import net.croz.apicurio.util.ArtifactMetadataGeneratingUtil
 import net.croz.apicurio.util.IOUtil
@@ -99,7 +98,7 @@ class SchemaRegistryRegisterTaskSpecification extends AbstractFunctionalSpecific
 
     where:
         inputFileName   | artifactTypeName || clientArtifactType
-        "TestAvro.avsc" | "AVRO"           || ClientArtifactType.AVRO
+        "TestAvro.avsc" | "AVRO"           || "AVRO"
   }
 
   def "should register local artifact in specific group"() {
@@ -134,6 +133,6 @@ class SchemaRegistryRegisterTaskSpecification extends AbstractFunctionalSpecific
 
     where:
         inputFileName   | artifactTypeName | conflictHandleTypeName || clientArtifactType
-        "TestAvro.avsc" | "AVRO"           | "RETURN_OR_UPDATE"     || ClientArtifactType.AVRO
+        "TestAvro.avsc" | "AVRO"           | "RETURN_OR_UPDATE"     || "AVRO"
   }
 }
