@@ -19,7 +19,7 @@ import net.croz.apicurio.service.client.model.ClientCommand
 import net.croz.apicurio.service.client.model.ClientMetadata
 import java.io.InputStream
 
-internal typealias ClientArtifactType = io.apicurio.registry.types.ArtifactType
+internal typealias ClientArtifactType = String
 internal typealias ClientConflictHandleType = IfExists
 
 /**

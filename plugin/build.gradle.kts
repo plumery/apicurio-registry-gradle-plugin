@@ -1,3 +1,5 @@
+import org.gradle.api.plugins.jvm.JvmTestSuite
+import org.gradle.api.tasks.testing.Test
 import org.jetbrains.dokka.gradle.DokkaTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -9,18 +11,11 @@ plugins {
     groovy
     `java-gradle-plugin`
     `java-test-fixtures`
-    id("com.gradle.plugin-publish") version "1.1.0"
+    id("com.gradle.plugin-publish") version "1.3.0"
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.dokka)
     alias(libs.plugins.kotlinx.kover)
     alias(libs.plugins.kotlinx.binaryCompatibilityValidator)
-}
-
-dependencies {
-    implementation(libs.apicurio.client)
-
-    testFixturesApi(libs.apicurio.client)
-    testFixturesImplementation(libs.spock.testContainers)
 }
 
 java {
@@ -32,17 +27,22 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
 }
 
+val pluginMetadata = tasks.named("pluginUnderTestMetadata")
+
+dependencies {
+    implementation(libs.apicurio.client)
+
+    testFixturesApi(libs.apicurio.client)
+    testFixturesImplementation(libs.spock.testContainers)
+}
+
 testing {
     suites {
         val test by getting(JvmTestSuite::class) {
-            testType.set(TestSuiteType.UNIT_TEST)
-
             useSpock(libs.versions.spock.get())
         }
 
         val functionalTest by registering(JvmTestSuite::class) {
-            testType.set(TestSuiteType.FUNCTIONAL_TEST)
-
             useSpock(libs.versions.spock.get())
             dependencies {
                 implementation(libs.spock.testContainers)
@@ -53,6 +53,8 @@ testing {
                 all {
                     testTask.configure {
                         shouldRunAfter(test)
+                        dependsOn(pluginMetadata)
+                        classpath = classpath.plus(pluginMetadata.get().outputs.files)
                     }
                 }
             }
@@ -109,13 +111,6 @@ gradlePlugin {
     }
 
     testSourceSets(sourceSets.getByName("functionalTest"))
-}
-
-pluginBundle {
-    website = "https://github.com/croz-ltd/apicurio-registry-gradle-plugin"
-    vcsUrl = "https://github.com/croz-ltd/apicurio-registry-gradle-plugin.git"
-    description = "A plugin to download, register and test compatibility of schemas from Apicurio Schema Registry"
-    tags = listOf("schema", "registry", "schema-registry", "apicurio", "kafka")
 }
 
 val isSnapshot = project.version.toString().endsWith("SNAPSHOT")

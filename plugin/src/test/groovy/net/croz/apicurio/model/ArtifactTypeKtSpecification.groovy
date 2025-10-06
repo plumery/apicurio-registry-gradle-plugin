@@ -1,24 +1,23 @@
 package net.croz.apicurio.model
 
-import io.apicurio.registry.types.ArtifactType as ClientArtifactType
 import spock.lang.Specification
 
 class ArtifactTypeKtSpecification extends Specification {
-  def "should return artifact type #artifactType from client artifact type #clientArtifactType"(ArtifactType artifactType, ClientArtifactType clientArtifactType) {
+  def "should return artifact type #artifactType from client artifact type #clientArtifactType"(ArtifactType artifactType, String clientArtifactType) {
     expect:
         ArtifactTypeKt.toArtifactType(clientArtifactType) == artifactType
 
     where:
-        clientArtifactType << ClientArtifactType.values()
+        clientArtifactType << ArtifactType.values().collect { it.toString() }
         artifactType << ArtifactType.values()
   }
 
-  def "should return client artifact type #clientArtifactType from artifact type #artifactType"(ClientArtifactType clientArtifactType, ArtifactType artifactType) {
+  def "should return client artifact type #clientArtifactType from artifact type #artifactType"(String clientArtifactType, ArtifactType artifactType) {
     expect:
         ArtifactTypeKt.toClientArtifactType(artifactType) == clientArtifactType
 
     where:
         artifactType << ArtifactType.values()
-        clientArtifactType << ClientArtifactType.values()
+        clientArtifactType << ArtifactType.values().collect { it.toString() }
   }
 }

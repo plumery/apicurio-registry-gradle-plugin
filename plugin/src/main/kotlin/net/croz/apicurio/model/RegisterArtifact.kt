@@ -15,10 +15,11 @@ import org.gradle.api.tasks.Optional
  */
 open class RegisterArtifact : Artifact() {
     @get:Input
-    lateinit var name: String
+    @get:Optional
+    var name: String? = null
 
     @get:Input
-    lateinit var type: String
+    var type: String = "AVRO"
 
     @get:Input
     lateinit var path: String
