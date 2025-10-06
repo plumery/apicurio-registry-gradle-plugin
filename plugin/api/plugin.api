@@ -1,4 +1,4 @@
-public class net/croz/apicurio/SchemaRegistryExtension {
+public class com/plumery/apicurio/SchemaRegistryExtension {
 	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
 	public final fun compatibility (Lorg/gradle/api/Action;)V
 	public final fun config (Lorg/gradle/api/Action;)V
@@ -6,35 +6,35 @@ public class net/croz/apicurio/SchemaRegistryExtension {
 	public final fun register (Lorg/gradle/api/Action;)V
 }
 
-public final class net/croz/apicurio/SchemaRegistryPlugin : org/gradle/api/Plugin {
+public final class com/plumery/apicurio/SchemaRegistryPlugin : org/gradle/api/Plugin {
 	public fun <init> ()V
 	public synthetic fun apply (Ljava/lang/Object;)V
 	public fun apply (Lorg/gradle/api/Project;)V
 }
 
-public class net/croz/apicurio/extension/CompatibilityHandler {
+public class com/plumery/apicurio/extension/CompatibilityHandler {
 	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
 	public final fun artifact (Lorg/gradle/api/Action;)V
 }
 
-public class net/croz/apicurio/extension/ConfigurationHandler {
+public class com/plumery/apicurio/extension/ConfigurationHandler {
 	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
 	public final fun auth (Ljava/lang/String;Ljava/lang/String;)V
 	public final fun auth (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 	public final fun url (Ljava/lang/String;)V
 }
 
-public class net/croz/apicurio/extension/DownloadHandler {
+public class com/plumery/apicurio/extension/DownloadHandler {
 	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
 	public final fun artifact (Lorg/gradle/api/Action;)V
 }
 
-public class net/croz/apicurio/extension/RegisterHandler {
+public class com/plumery/apicurio/extension/RegisterHandler {
 	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
 	public final fun artifact (Lorg/gradle/api/Action;)V
 }
 
-public class net/croz/apicurio/model/Artifact {
+public class com/plumery/apicurio/model/Artifact {
 	public field id Ljava/lang/String;
 	public fun <init> ()V
 	public final fun getGroupId ()Ljava/lang/String;
@@ -45,15 +45,14 @@ public class net/croz/apicurio/model/Artifact {
 	public final fun setVersion (Ljava/lang/String;)V
 }
 
-public class net/croz/apicurio/model/CompatibilityArtifact : net/croz/apicurio/model/Artifact {
+public class com/plumery/apicurio/model/CompatibilityArtifact : com/plumery/apicurio/model/Artifact {
 	public field path Ljava/lang/String;
 	public fun <init> ()V
 	public final fun getPath ()Ljava/lang/String;
 	public final fun setPath (Ljava/lang/String;)V
 }
 
-public class net/croz/apicurio/model/DownloadArtifact : net/croz/apicurio/model/Artifact {
-	public field outputPath Ljava/lang/String;
+public class com/plumery/apicurio/model/DownloadArtifact : com/plumery/apicurio/model/Artifact {
 	public fun <init> ()V
 	public final fun getOutputFileName ()Ljava/lang/String;
 	public final fun getOutputPath ()Ljava/lang/String;
@@ -61,10 +60,8 @@ public class net/croz/apicurio/model/DownloadArtifact : net/croz/apicurio/model/
 	public final fun setOutputPath (Ljava/lang/String;)V
 }
 
-public class net/croz/apicurio/model/RegisterArtifact : net/croz/apicurio/model/Artifact {
-	public field name Ljava/lang/String;
+public class com/plumery/apicurio/model/RegisterArtifact : com/plumery/apicurio/model/Artifact {
 	public field path Ljava/lang/String;
-	public field type Ljava/lang/String;
 	public fun <init> ()V
 	public final fun getCanonicalize ()Z
 	public final fun getConflictHandleType ()Ljava/lang/String;

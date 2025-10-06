@@ -1,6 +1,6 @@
 {
   "type": "record",
-  "namespace": "net.croz",
+  "namespace": "com.plumery",
   "name": "Person",
   "fields": [
     {

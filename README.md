@@ -1,6 +1,3 @@
-[![CI](https://github.com/croz-ltd/apicurio-registry-gradle-plugin/actions/workflows/ci.yml/badge.svg)](https://github.com/croz-ltd/apicurio-registry-gradle-plugin/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/croz-ltd/apicurio-registry-gradle-plugin/branch/main/graph/badge.svg?token=t54Rqfd1UO)](https://codecov.io/gh/croz-ltd/apicurio-registry-gradle-plugin)
-[![Dokka](https://img.shields.io/badge/API%20Documentation-Dokka-important.svg)](https://croz-ltd.github.io/apicurio-registry-gradle-plugin/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://www.opensource.org/licenses/MIT)
 
 # Apicurio Schema Registry Gradle plugin
@@ -15,7 +12,7 @@ To apply this plugin to your project, add the following line to your root `build
 
 ```groovy
 plugins {
-    id 'apicurio-registry-gradle-plugin' version "<<latest_version>>"
+    id 'com.plumery.apicurio-registry-gradle-plugin' version "<<latest_version>>"
 }
 ```
 
@@ -23,11 +20,12 @@ or `build.gradle.kts`:
 
 ```kotlin
 plugins {
-    id("apicurio-registry-gradle-plugin") version "<<latest_version>>"
+    id("com.plumery.apicurio-registry-gradle-plugin") version "<<latest_version>>"
 }
 ```
 
-For detailed usage instructions, please consult [the wiki]().
+This plugin is based on the original work by CROZ Ltd. (https://github.com/croz-ltd/apicurio-registry-gradle-plugin).
+This fork updates the Gradle tooling and Apicurio client dependencies, and includes a few smaller refinements.
 
 ## Tasks
 
@@ -42,6 +40,7 @@ under the `schemaRegistry` group:
 ## License
 
     Copyright (c) 2023 CROZ Ltd.
+    Copyright (c) 2025 Plumery
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal

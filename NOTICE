@@ -1,0 +1,13 @@
+Apicurio Schema Registry Gradle Plugin
+Copyright (c) 2025 Plumery
+
+This product includes software developed by CROZ Ltd. (https://www.croz.net/).
+
+This software is based on the original Apicurio Schema Registry Gradle Plugin
+developed by CROZ Ltd., available at:
+https://github.com/croz-ltd/apicurio-registry-gradle-plugin
+
+Original Copyright Notice:
+Copyright (c) 2023 CROZ Ltd.
+
+Licensed under the MIT License. See LICENSE file for details.
