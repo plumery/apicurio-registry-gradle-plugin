@@ -33,28 +33,6 @@ internal enum class ArtifactType(val extension: String) {
     }
 }
 
-internal fun ArtifactType.toClientArtifactType(): ClientArtifactType = when (this) {
-    ArtifactType.AVRO -> ClientArtifactType.AVRO
-    ArtifactType.PROTOBUF -> ClientArtifactType.PROTOBUF
-    ArtifactType.JSON -> ClientArtifactType.JSON
-    ArtifactType.OPENAPI -> ClientArtifactType.OPENAPI
-    ArtifactType.ASYNCAPI -> ClientArtifactType.ASYNCAPI
-    ArtifactType.GRAPHQL -> ClientArtifactType.GRAPHQL
-    ArtifactType.KCONNECT -> ClientArtifactType.KCONNECT
-    ArtifactType.WSDL -> ClientArtifactType.WSDL
-    ArtifactType.XSD -> ClientArtifactType.XSD
-    ArtifactType.XML -> ClientArtifactType.XML
-}
+internal fun ArtifactType.toClientArtifactType(): ClientArtifactType = this.name
 
-internal fun ClientArtifactType.toArtifactType(): ArtifactType = when (this) {
-    ClientArtifactType.AVRO -> ArtifactType.AVRO
-    ClientArtifactType.PROTOBUF -> ArtifactType.PROTOBUF
-    ClientArtifactType.JSON -> ArtifactType.JSON
-    ClientArtifactType.OPENAPI -> ArtifactType.OPENAPI
-    ClientArtifactType.ASYNCAPI -> ArtifactType.ASYNCAPI
-    ClientArtifactType.GRAPHQL -> ArtifactType.GRAPHQL
-    ClientArtifactType.KCONNECT -> ArtifactType.KCONNECT
-    ClientArtifactType.WSDL -> ArtifactType.WSDL
-    ClientArtifactType.XSD -> ArtifactType.XSD
-    ClientArtifactType.XML -> ArtifactType.XML
-}
+internal fun ClientArtifactType.toArtifactType(): ArtifactType = ArtifactType.fromName(this)
