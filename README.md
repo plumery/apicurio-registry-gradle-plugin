@@ -25,6 +25,7 @@ plugins {
 ```
 
 This plugin is based on the original work by CROZ Ltd. (https://github.com/croz-ltd/apicurio-registry-gradle-plugin).
+This fork updates the Gradle tooling and Apicurio client dependencies, and includes a few smaller refinements.
 
 ## Tasks
 
