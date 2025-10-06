@@ -2,18 +2,18 @@
 
 This module shows the Apicurio Registry Gradle Plugin syntax usage.
 
-# Package net.croz.apicurio
+# Package com.plumery.apicurio
 
 The root package containing the plugin implementation.
 
-# Package net.croz.apicurio.exception
+# Package com.plumery.apicurio.exception
 
 Contains the exceptions used by this plugin.
 
-# Package net.croz.apicurio.extension
+# Package com.plumery.apicurio.extension
 
 Contains the extensions that consist of all the settings and properties for this plugin.
 
-# Package net.croz.apicurio.model
+# Package com.plumery.apicurio.model
 
 Contains a set of DSL structures related to artifacts used by the tasks defined by this plugin.
