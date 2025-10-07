@@ -7,6 +7,8 @@ val VERSION: String by project
 version = VERSION
 group = "com.plumery.apicurio"
 
+val isJitpackBuild = System.getenv("JITPACK") != null
+
 plugins {
     groovy
     `java-gradle-plugin`
@@ -68,6 +70,10 @@ tasks.named("check") {
 
 tasks.withType<Test>().configureEach {
     useJUnitPlatform()
+
+    if (name == "functionalTest" && isJitpackBuild) {
+        enabled = false
+    }
 }
 
 tasks.withType<Copy>().all {
