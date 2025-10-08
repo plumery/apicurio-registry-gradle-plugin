@@ -19,7 +19,7 @@ open class RegisterArtifact : Artifact() {
     var name: String? = null
 
     @get:Input
-    var type: String = "AVRO"
+    lateinit var type: String
 
     @get:Input
     lateinit var path: String
