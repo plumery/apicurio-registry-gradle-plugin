@@ -21,6 +21,7 @@ public class com/plumery/apicurio/extension/ConfigurationHandler {
 	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
 	public final fun auth (Ljava/lang/String;Ljava/lang/String;)V
 	public final fun auth (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public final fun auth (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 	public final fun url (Ljava/lang/String;)V
 }
 

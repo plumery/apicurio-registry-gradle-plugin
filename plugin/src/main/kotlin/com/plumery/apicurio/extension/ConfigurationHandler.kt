@@ -50,4 +50,24 @@ open class ConfigurationHandler @Inject constructor(factory: ObjectFactory) {
         )
         authentication.disallowChanges()
     }
+
+    /**
+     * Provide the authentication details in case the Apicurio Schema Registry uses OAuth with a custom scope.
+     *
+     * @param authServerUrl The URL of the authentication server used for the Apicurio Schema Registry.
+     * @param clientId The client ID for the authentication server.
+     * @param clientSecret The client secret passphrase for the authentication server.
+     * @param scope The OAuth scope parameter.
+     */
+    fun auth(authServerUrl: String, clientId: String, clientSecret: String, scope: String) {
+        authentication.set(
+            Authentication.OAuth(
+                authServerUrl,
+                clientId,
+                clientSecret,
+                scope
+            )
+        )
+        authentication.disallowChanges()
+    }
 }

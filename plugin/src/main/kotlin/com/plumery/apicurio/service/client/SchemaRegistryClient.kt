@@ -52,7 +52,9 @@ internal class SchemaRegistryClient(url: String, authentication: Authentication)
                 val auth = OidcAuth(
                     httpClient,
                     authentication.clientId,
-                    authentication.clientSecret
+                    authentication.clientSecret,
+                    null,
+                    authentication.scope
                 )
                 client = RegistryClientFactory.create(url, emptyMap(), auth)
             }
