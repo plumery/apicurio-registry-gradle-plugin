@@ -30,7 +30,8 @@ internal sealed class Authentication : Serializable {
      * @property authServerUrl The URL of the authentication server used for the Apicurio Schema Registry.
      * @property clientId The client ID for the authentication server.
      * @property clientSecret The client secret passphrase for the authentication server.
+     * @property scope The optional OAuth scope parameter.
      */
-    data class OAuth(val authServerUrl: String, val clientId: String, val clientSecret: String) :
+    data class OAuth(val authServerUrl: String, val clientId: String, val clientSecret: String, val scope: String? = null) :
         Authentication()
 }

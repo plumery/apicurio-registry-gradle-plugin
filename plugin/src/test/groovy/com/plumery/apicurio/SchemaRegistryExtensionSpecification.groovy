@@ -73,6 +73,33 @@ class SchemaRegistryExtensionSpecification extends Specification {
         castedAuthenticationContext.authServerUrl == authServerUrl
         castedAuthenticationContext.clientId == clientId
         castedAuthenticationContext.clientSecret == clientSecret
+        castedAuthenticationContext.scope == null
+  }
+
+  def "should set OAuth authentication details with scope through configuration handler"() {
+    given:
+        def authServerUrl = "http://localhost:8080"
+        def clientId = UUID.randomUUID().toString()
+        def clientSecret = UUID.randomUUID().toString()
+        def scope = "openid profile email"
+
+    when:
+        extension.config(new Action<ConfigurationHandler>() {
+          @Override
+          void execute(ConfigurationHandler handler) {
+            handler.auth(authServerUrl, clientId, clientSecret, scope)
+          }
+        })
+
+    then:
+        Authentication authenticationContext = extension.config$plugin.authentication$plugin.get()
+        authenticationContext
+        authenticationContext instanceof Authentication.OAuth
+        def castedAuthenticationContext = authenticationContext as Authentication.OAuth
+        castedAuthenticationContext.authServerUrl == authServerUrl
+        castedAuthenticationContext.clientId == clientId
+        castedAuthenticationContext.clientSecret == clientSecret
+        castedAuthenticationContext.scope == scope
   }
 
   def "should set artifact details to be downloaded through download handler"() {
